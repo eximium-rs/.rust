@@ -1,10 +1,10 @@
-name: Reusable Check Code Format Workflow
+name: Reusable Test Workflow
 on:
   workflow_call:
 
 jobs:
-  format:
-    name: Check code format.
+  test:
+    name: Run test-suite.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source.
@@ -13,8 +13,13 @@ jobs:
         run: rustup show
       - name: Restore cargo cache.
         uses: Swatinem/rust-cache@v1
-      - name: Run rustfmt.
+      - name: Compile test binary.
         uses: actions-rs/cargo@v1
         with:
-          command: fmt
-          args: --all --verbose -- --check
+          command: test
+          args: --no-run --workspace --verbose
+      - name: Run tests.
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --workspace --verbose
