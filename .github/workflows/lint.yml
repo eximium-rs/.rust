@@ -23,3 +23,5 @@ jobs:
         with:
           command: clippy
           args: --workspace --all-targets --verbose -- --deny warnings
+      - name: Run cspell
+        uses: streetsidesoftware/cspell-action@v1
