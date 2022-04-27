@@ -11,5 +11,5 @@
     "filetypes",
     "misc"
   ],
-  "words": []
+  "words": ["eximium", "riscv", "rlib", "rustfmt", "clippy", "rustdoc"]
 }

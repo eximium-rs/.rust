@@ -25,3 +25,5 @@ jobs:
           args: --workspace --all-targets --verbose -- --deny warnings
       - name: Run cspell
         uses: streetsidesoftware/cspell-action@v1
+        with:
+          files: "**/*.{rs,json,toml,md,yml}"

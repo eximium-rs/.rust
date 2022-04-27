@@ -18,11 +18,6 @@ jobs:
         with:
           command: fmt
           args: --all --verbose -- --check
-      - name: Install dprint.
-        uses: actions-rs/cargo@v1
-        with:
-          command: install
-          args: --verbose dprint
       - name: Run dprint.
         run: |
           dprint check --verbose
